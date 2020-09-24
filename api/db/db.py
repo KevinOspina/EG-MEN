@@ -5,5 +5,4 @@ cnx = mysql.MySQLConnection(
     user="root",
     password="",
     database="evergreen"
-
 )

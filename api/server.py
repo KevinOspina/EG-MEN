@@ -1,4 +1,4 @@
-from flask import Flask  
+from flask import Flask, request
 from flask_cors import CORS
 from controllers.Canal import Canal
 
@@ -14,7 +14,13 @@ def getAll():
 
 @app.route('/canal', methods=['POST'])
 def insert():
-    return (Canal.insert())
+    body =  request.json
+    return (Canal.insert(body))
+
+@app.route('/canal', methods=['DELETE'])
+def delete():
+    body = request.json
+    return (Canal.delete(body))
 
 
 

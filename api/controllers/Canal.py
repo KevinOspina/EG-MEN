@@ -17,9 +17,20 @@ class Canal:
         return jsonify(lista)
         cnx.close
 
+
     def insert(body):
         data = (body['nombre'],body['tipo'],body['tipoDestinatario'],body['fecha'])
         sql = "INSERT INTO canal(nombre, tipo, tipoDestinatario,fecha) VALUES (%s,%s,%s,%s)"
         cur.execute(sql,data)
         cnx.commit()
-        return{'estado': "Insertado"}, 200
+        return{'estado': "OK"}, 200
+
+    def delete(body):
+        idCanal = (body['idCanal'])
+        sql = "DELETE FROM canal WHERE idCanal=" + idCanal
+        cur.execute(sql,idCanal)
+        cnx.commit()
+        return {"status": "OK"}, 200
+
+
+

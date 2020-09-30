@@ -18,19 +18,21 @@ class Canal:
         cnx.close
 
 
-    def insert(body):
-        data = (body['nombre'],body['tipo'],body['tipoDestinatario'],body['fecha'])
-        sql = "INSERT INTO canal(nombre, tipo, tipoDestinatario,fecha) VALUES (%s,%s,%s,%s)"
+    def post(body):
+        data = (body['nombre'],body['tipo'],body['tipo_destinatario'],body['fecha'])
+        sql = "INSERT INTO canal(nombre, tipo, tipo_destinatario,fecha) VALUES (%s,%s,%s,%s)"
         cur.execute(sql,data)
         cnx.commit()
         return{'estado': "OK"}, 200
 
     def delete(body):
-        idCanal = (body['idCanal'])
-        sql = "DELETE FROM canal WHERE idCanal=" + idCanal
-        cur.execute(sql,idCanal)
+        id_canal = (body['id_canal'])
+        sql = "DELETE FROM canal WHERE id_canal=" + id_canal
+        cur.execute(sql,id_canal)
         cnx.commit()
         return {"status": "OK"}, 200
+
+    
 
 
 

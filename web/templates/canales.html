@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <title>Canales</title>
+</head>
+<body>
+
+  
+    <div class="container" style="margin-top: 50px;">
+      <h4>Canales</h4>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Tipo destinatario</th>
+                <th scope="col">Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="listCanales">
+              {% for canal in canales %}
+              <tr>
+                <td>{{canal['nombre']}}<td>
+                <td>{{canal['tipo']}}<td>
+                <td>{{canal['tipo_destinatario']}}<td>
+                <td>{{canal['fecha']}}<td>
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+
+    </div>
+
+<script crossorigin="anonymous"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ class Canal:
     global cur  
     cur = cnx.cursor()
     
-    def list():
+    def get():
         lista = []
         cur.execute("SELECT * FROM canal")
         rows = cur.fetchall()

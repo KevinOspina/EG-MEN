@@ -1,7 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
 from controllers.Canal import Canal
-from flask_mysqldb import MySQL
 from db.db import cnx
 
 app = Flask(__name__)
@@ -9,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/canal', methods=['GET'])
 def getAll():
-    return (Canal.list())
+    return (Canal.get())
 
 @app.route('/canal', methods=['POST'])
 def post():

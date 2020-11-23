@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 import requests
-from flask_cors import CORS
 
+app = Flask(__name__)
 
-app = Flask(__name__, template_folder='templates', static_folder='static' )
+tipo_destinatarios = ['Simple', 'Grupal']
+tipo_canales = ['SMS', 'Email','WhatsApp','Llamada']
 
-@app.route('/listCanales', methods=['GET'])
+@app.route('/listarCanales', methods=['GET'])
 def listarCanales():
     canales = requests.get('http://localhost:3000/canal').json()
     #print(canales)
@@ -14,7 +15,7 @@ def listarCanales():
 
 @app.route('/crearCanales', methods=['GET'])
 def crearCanales():
-    return render_template('index.html')
+    return render_template('listarCanales.html',tipo_destinatarios=tipo_destinatarios,tipo_canales=tipo_canales)
 
 
 @app.route('/guardarCanales', methods=['POST'])

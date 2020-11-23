@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <title>Canales</title>
+</head>
+<body>
+
+<div class="container" style="margin-top: 50px; text-align: center;">
+
+   
+    <h4>Crear un canal</h4>
+
+    <form id="form-canal" name="form-canal" action="/guardarCanales" method="POST" style="margin-top: 40px;">
+
+        <div>
+            <label class="col-md-2" style="text-align: left;">Nombre</label>
+            <input name="nombre" id="nombre"class="col-md-10" placeholder="Digite un nombre para el canal" style="width: 300px;" required>
+        </div>
+
+        <div>
+            <label style="text-align: left;"class="col-md-2">Tipo Canal</label>
+            <select name="tipo" id="listarCanales" class="col-md-10"style="width: 300px;">
+                <option>Seleccione una opción...</option>
+                {% for tipo_canal in tipo_canales %}
+                <option>{{tipo_canal}}</option>
+                {% endfor %}
+             
+            </select>
+        </div>
+
+        <div>
+            <label style="text-align: left;"class="col-md-2" >Tipo Destinatario</label>
+            <select name="tipo_destinatario" id="listarCanales"class="col-md-10"style="width: 300px;">
+                <option>Seleccione una opción...</option>
+                {% for tipo_destinatario in tipo_destinatarios %}
+                <option>{{tipo_destinatario}}</option>
+                {% endfor %}
+              
+            </select>
+        </div>
+
+        <div>
+            <label style="text-align: left;"class="col-md-2">Fecha</label>
+            <input name="fecha" id="fecha"class="col-md-10" type="date" style="max-width: 300px;" required> 
+        </div>
+
+        <div style="text-align: center;">
+            <button type="submit" id="submitCanal" class="btn btn-success" style="margin-top: 15px;">
+                Guardar
+            </button>
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>

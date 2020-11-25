@@ -1,8 +1,9 @@
 import mysql.connector as mysql
+
 cnx = mysql.MySQLConnection(
-    host="127.0.0.1",
+    host="35.238.134.181",
     port=3306,
     user="root",
-    password="",
+    password="evergreen1",
     database="evergreen"
 )

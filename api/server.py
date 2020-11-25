@@ -1,9 +1,9 @@
-from flask import Flask, request
+from flask import Flask ,jsonify ,request
 from flask_cors import CORS
 from controllers.Canal import Canal
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/canal', methods=['GET'])
 def getAll():

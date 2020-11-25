@@ -7,7 +7,7 @@ class Canal:
     
     def get():
         lista = []
-        cur.execute("SELECT * FROM canal")
+        cur.execute("SELECT * FROM Canal")
         rows = cur.fetchall()
         colums = [i[0] for i in cur.description]
         for row in rows:
@@ -20,14 +20,14 @@ class Canal:
 
     def post(body):
         data = (body['nombre'],body['tipo'],body['tipo_destinatario'],body['fecha'])
-        sql = "INSERT INTO canal(nombre, tipo, tipo_destinatario,fecha) VALUES (%s,%s,%s,%s)"
+        sql = "INSERT INTO Canal(nombre, tipo, tipo_destinatario,fecha) VALUES (%s,%s,%s,%s)"
         cur.execute(sql,data)
         cnx.commit()
         return{'estado': "OK"}, 200
 
     def delete(body):
         id_canal = (body['id_canal'])
-        sql = "DELETE FROM canal WHERE id_canal=" + id_canal
+        sql = "DELETE FROM Canal WHERE id_canal=" + id_canal
         cur.execute(sql,id_canal)
         cnx.commit()
         return {"status": "OK"}, 200

@@ -8,7 +8,7 @@ tipo_canales = ['SMS', 'Email','WhatsApp','Llamada']
 
 @app.route('/listarCanales', methods=['GET'])
 def listarCanales():
-    canales = requests.get('http://localhost:3000/canal').json()
+    canales = requests.get('https://mystic-stream-296623.uc.r.appspot.com/canal').json()
     #print(canales)
     return render_template('canales.html', canales=canales)
 
